@@ -1,0 +1,14 @@
+<h1>New Game Request Form</h1>
+
+<%= form_for(@new_post) do |f|%>
+<%=f.label :game_title%>
+<%=f.text_field :game_title%>
+
+<%=f.label :requested_number_of_players%>
+<%=f.text_field :requested_number_of_players%>
+
+<%=f.label :description%>
+<%=f.text_field :description%>
+
+<%=f.submit "Add Game Request"%>
+<%end%>
