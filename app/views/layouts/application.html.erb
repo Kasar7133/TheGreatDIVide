@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html class="onyx">
 <head>
   <title>TheGreatDivide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="onyx">
   
-  <nav class="top-bar">
+  <nav class="top-bar ivory">
     <h1><a href="/">The Great Divide</a></h1>
 
     <section class="top-bar-section center">
@@ -16,9 +16,9 @@
     </section>
 
     <section class="top-bar-section">
-      <ul class="right">
+      <ul class="right ivory">
         <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <li class="ivory"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "ivory"%></li>
         <%- else -%>
           <li><%= link_to 'Sign Up', new_user_registration_path %></li>
           <li><%= link_to 'Sign In', new_user_session_path %></li>
