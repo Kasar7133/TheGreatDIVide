@@ -15,7 +15,6 @@ class GamePostsController<ApplicationController
     end
 
     def create
-        # binding.pry
         @new_post= GamePost.new(post_params)
         @new_post.user_id = current_user.id
         if @new_post.save
