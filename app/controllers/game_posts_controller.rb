@@ -15,8 +15,22 @@ class GamePostsController<ApplicationController
     end
 
     def create
-        @new_post= GamePost.new(params)
+        # binding.pry
+        @new_post= GamePost.new(post_params)
+        @new_post.user_id = current_user.id
+        if @new_post.save
+            flash[:notice] = "You successfully added #{@new_post.game_title}."
+            redirect_to game_post_path(@new_post)
+          else
+            flash.now[:error] = @new_post.errors.full_messages.to_sentence 
+            render :new
+        end
+    end
 
+    private
+
+    def post_params
+        params.require(:game_post).permit(:game_title, :requested_number_of_players, :user_id, :description)
     end
 
 end
