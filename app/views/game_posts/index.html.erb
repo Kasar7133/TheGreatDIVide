@@ -1,0 +1,15 @@
+<h1 class="center">The Great Divide</h1>
+
+<div class="grid-container">
+    
+        <%@game_posts.each do |post|%>
+            
+            <div class="callout cell small-12 medium-6 large-4"> 
+                <h3>Game: <%=link_to "#{post.game_title}", game_post_path(post.id)%></h3>
+                <h5>Empty slots: <%=post.requested_number_of_players%></h5>
+
+            </div>
+        <%end%>
+
+
+</div>
