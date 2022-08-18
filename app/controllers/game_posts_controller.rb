@@ -1,6 +1,6 @@
 class GamePostsController<ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
-    before_action :authorize_user, except: [:index, :show, :new, :create]
+    before_action :authorize_user, except: [:index, :show, :new, :create, :destroy]
     def index
         @game_posts = GamePost.all
     end
@@ -8,6 +8,7 @@ class GamePostsController<ApplicationController
     def show
         @this_post = GamePost.find(params[:id])
         @host = User.find(@this_post.user_id)
+        @host.role = "host"
     end
 
     def new 
@@ -25,6 +26,19 @@ class GamePostsController<ApplicationController
             render :new
         end
     end
+    def destroy
+        @post = GamePost.find(params[:id])
+        @host = User.find(@post.user_id)
+        if current_user===@host && @post.destroy
+          
+          flash[:notice] = "Post Deleted."
+          redirect_to game_posts_path
+        else
+          flash.now[:error] = "Unable to delete post"
+          render :edit
+        end
+    
+      end
 
     private
 
