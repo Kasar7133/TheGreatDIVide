@@ -1,7 +1,10 @@
 
 <div class="wisteria sessions borders">
-<h2 class= "sessions borders">Game: <%=@this_post.game_title%></h2>
-<h2 class="sessions borders">Host: <%=@host.username%> </h2>
-<h3 class="sessions borders">Number of players requested: <%=@this_post.requested_number_of_players%> </h3>
-<p class="descriptions borders">Description: <%=@this_post.description%> </p>
+    <h2 class= "sessions borders">Game: <%=@this_post.game_title%></h2>
+    <h2 class="sessions borders">Host: <%=@host.username%> </h2>
+    <h3 class="sessions borders">Number of players requested: <%=@this_post.requested_number_of_players%> </h3>
+    <p class="descriptions borders">Description: <%=@this_post.description%> </p>
+    <% if current_user===@host %>
+    <%= link_to "Delete this post", game_post_path(@this_post), method: "DELETE", class: "button alert" %>
+    <%end%>
 </div>
