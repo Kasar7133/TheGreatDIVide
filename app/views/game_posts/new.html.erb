@@ -1,14 +1,14 @@
 <h1 class="center red sessions">New Game Request Form</h1>
 
 <%= form_for(@new_post) do |f|%>
-<%=f.label :game_title, class: "sessions wisteria"%>
-<%=f.text_field :game_title, class: "sessions text-field"%>
+<%=f.label :game_title, class: "form-labels wisteria"%>
+<%=f.text_field :game_title, class: "form-labels text-field"%>
 
-<%=f.label :requested_number_of_players, class: "sessions wisteria"%>
-<%=f.text_field :requested_number_of_players, class: "sessions text-field"%>
+<%=f.label :requested_number_of_players,value: "Number of players you need:", class: "form-labels wisteria"%>
+<%=f.text_field :requested_number_of_players, class: "form-labels text-field"%>
 
-<%=f.label :description, class: "sessions wisteria"%>
-<%=f.text_field :description, class: "sessions text-field"%>
+<%=f.label :description, class: "form-labels wisteria"%>
+<%=f.text_field :description, class: "form-labels text-field"%>
 
-<%=f.submit "Add Game Request", class: "button sessions"%>
+<%=f.submit "Add Game Request", class: "button success sessions"%>
 <%end%>
