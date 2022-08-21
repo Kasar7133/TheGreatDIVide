@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="onyx">
 <head>
-  <title>TheGreatDivide</title>
+  <title>The Great Divide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
@@ -12,16 +12,16 @@
     <h1><a href="/">The Great Divide</a></h1>
 
     <section class="top-bar-section center">
-    <%=link_to "Add a new game request.", new_game_post_path%>
+    <strong><%=link_to "Add a new game request.", new_game_post_path%></strong>
     </section>
 
-    <section class="top-bar-section">
+    <section class="top-bar-section ivory">
       <ul class="right ivory">
         <%- if current_user -%>
-          <li class="ivory"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "ivory"%></li>
+          <li class="ivory"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete%></li>
         <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <li class="ivory"><%= link_to 'Sign Up', new_user_registration_path%></li>
+          <li class="ivory"><%= link_to 'Sign In', new_user_session_path%></li>
         <%- end -%>
       </ul>
     </section>

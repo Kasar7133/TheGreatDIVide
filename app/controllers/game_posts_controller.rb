@@ -1,5 +1,5 @@
 class GamePostsController<ApplicationController
-    before_action :authenticate_user!, except: [:index, :show]
+    before_action :authenticate_user!, except: [:index]
     before_action :authorize_user, except: [:index, :show, :new, :create, :destroy]
     def index
         @game_posts = GamePost.all
@@ -7,8 +7,8 @@ class GamePostsController<ApplicationController
 
     def show
         @this_post = GamePost.find(params[:id])
-        @host = User.find(@this_post.user_id)
-        @host.role = "host"
+
+        @host = @this_post.user
     end
 
     def new 
@@ -17,7 +17,8 @@ class GamePostsController<ApplicationController
 
     def create
         @new_post= GamePost.new(post_params)
-        @new_post.user_id = current_user.id
+        @new_post.user = current_user
+        @new_post.user = current_user
         if @new_post.save
             flash[:notice] = "You successfully added #{@new_post.game_title}."
             redirect_to game_post_path(@new_post)
@@ -26,9 +27,10 @@ class GamePostsController<ApplicationController
             render :new
         end
     end
+    
     def destroy
         @post = GamePost.find(params[:id])
-        @host = User.find(@post.user_id)
+        @host = @post.user)
         if current_user===@host && @post.destroy
           
           flash[:notice] = "Post Deleted."
