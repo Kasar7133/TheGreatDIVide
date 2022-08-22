@@ -30,7 +30,7 @@ class GamePostsController<ApplicationController
     
     def destroy
         @post = GamePost.find(params[:id])
-        @host = @post.user)
+        @host = @post.user
         if current_user===@host && @post.destroy
           
           flash[:notice] = "Post Deleted."
