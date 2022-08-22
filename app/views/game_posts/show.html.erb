@@ -1,9 +1,9 @@
 
-<div class="wisteria sessions borders">
+<div class="wisteria sessions">
     <h2 class= "center red sessions">Game: <%=@this_post.game_title%></h2>
-    <h2 class="sessions borders">Host: <%=@host.username%> </h2>
-    <h3 class="sessions borders">Number of players: <%=@this_post.users.length%>/<%=@this_post.requested_number_of_players%> </h3>
-    <p class="descriptions borders">Description: <%=@this_post.description%> </p>
+    <h2 class="sessions">Host: <%=@host.username%> </h2>
+    <h3 class="sessions">Number of players: <%=@this_post.users.length%>/<%=@this_post.requested_number_of_players%> </h3>
+    <p class="descriptions">Description: <%=@this_post.description%> </p>
     <p class="sessions">Team:</p>
     <%if @this_post.users.empty?%>
         <p class="sessions">None have joined yet</p>
