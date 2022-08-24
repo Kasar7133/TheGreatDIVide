@@ -1,7 +1,14 @@
 import React from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
+import GamePostShowPage from './GamePostShowPage'
+
 
 export const App = (props) => {
-  return (<h1>Make It So React</h1>)
+  return (
+    <BrowserRouter>
+      <Route exact path="/game_posts/:id" component={GamePostShowPage} />
+    </BrowserRouter>
+  )
 }
 
 export default App
