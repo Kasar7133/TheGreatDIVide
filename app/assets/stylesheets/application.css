@@ -28,12 +28,18 @@
 
 
 .ivory{
-    background-color: #EAF0CE;
+    background-color: #F0FFF1;
 }
 
 .blue{
-    background-color: #18D1F2;
-    color: #2A0C4E;
+    background-color: #5FB0B7 ;
+    color: #5913ae;
+}
+
+.cell-border{
+    border: #443850;
+    border-style: solid;
+    border-width:medium
 }
 
 .sessions{
@@ -48,16 +54,23 @@
     border-style: solid;
     padding: .6rem;
     padding-bottom: 1.2rem;
+    border-width: thin;
 }
 
 .borders-add{
     border: #443850;
     border-style: solid;
     padding: 2rem;
+    border-width: thin;
+}
+
+.join-border{
+    border: #443850;
+    border-style: solid;
+    border-width: thin;
 }
 
 .select{
-    white-space: nowrap;
     padding-left: .5%;
     margin-top: 1%;
     margin-left: .5%;

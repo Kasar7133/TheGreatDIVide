@@ -4,10 +4,10 @@
 <div class="grid-container ivory">
     <%@game_posts.each do |post|%>
             
-        <div class="callout cell wisteria"> 
+        <div class="callout cell wisteria cell-border"> 
         
             <h2>Team Name: <%=link_to "#{post.team_name}", "/game_posts/#{post.id}"%></h2> 
-            <h5>Empty slots: <%=post.requested_number_of_players%></h5>
+            <h5>Empty slots: <%=post.requested_number_of_players-post.registrations.length%></h5>
 
         </div>
     <%end%>
