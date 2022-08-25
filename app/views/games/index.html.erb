@@ -1,0 +1,9 @@
+<h1 class="center" >Available Games:</h1>
+<div class="grid-container ivory">
+    <%@games.each do |game|%>
+        <div class="callout cell wisteria"> 
+            <h2 class="center" ><%=link_to "#{game.title}", game_game_posts_path(game.id)%></h2>
+
+        </div>
+    <%end%>
+</div>

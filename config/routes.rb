@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  root 'game_posts#index'
+  root "games#index"
   devise_for :users
-
-  resources :game_posts, only: [:index, :new, :destroy, :create] 
-
+  resources :games, only: [:index, :show, :new, :create] do
+    resources :game_posts, only: [:index, :destroy] 
+  end
+  resources :game_posts, only: [:new, :create]
   get "/game_posts/:id", to: "homes#index"
 
   namespace :api do

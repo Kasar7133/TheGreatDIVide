@@ -1,13 +1,12 @@
-<h1 class="center red sessions">Available Sessions:</h1>
+<h1 class="center sessions">Available Sessions:</h1>
 
 
-
-<div class="grid-container onyx">
+<div class="grid-container ivory">
     <%@game_posts.each do |post|%>
             
-        <div class="callout cell small-12 medium-6 large-4 wisteria"> 
+        <div class="callout cell wisteria"> 
         
-            <h3>Game: <%=link_to "#{post.game_title}", game_post_path(post.id)%></h3>
+            <h2>Team Name: <%=link_to "#{post.team_name}", "/game_posts/#{post.id}"%></h2> 
             <h5>Empty slots: <%=post.requested_number_of_players%></h5>
 
         </div>

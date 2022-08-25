@@ -13,7 +13,6 @@ class Api::V1::GamePostsController < ApplicationController
             gamePost.users,
             gamePost.description,
         )
-        # binding.pry
 
         render json: {session: session, current_user: current_user }
     end

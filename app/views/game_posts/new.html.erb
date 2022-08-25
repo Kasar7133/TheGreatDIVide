@@ -1,8 +1,13 @@
-<h1 class="center red sessions">New Game Request Form</h1>
+<h1 class="center">New Game Request Form</h1>
 
 <%= form_for(@new_post) do |f|%>
-<%=f.label :game_title, class: "form-labels wisteria"%>
-<%=f.text_field :game_title, class: "form-labels text-field"%>
+<%=f.label :game_id, class: "form-labels wisteria", value: "Select a game:"%>
+<div class="select">
+<%= f.collection_select :game_id, Game.all, :id, :title, include_blank: true %>
+</div>
+
+<%=f.label :team_name,  class: "form-labels wisteria"%>
+<%=f.text_field :team_name, class: "form-labels text-field" %>
 
 <%=f.label :requested_number_of_players,value: "Number of players you need:", class: "form-labels wisteria"%>
 <%=f.text_field :requested_number_of_players, class: "form-labels text-field"%>

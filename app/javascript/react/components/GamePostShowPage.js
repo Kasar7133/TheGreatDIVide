@@ -93,7 +93,7 @@ const GamePostShowPage = (props) => {
     return (
         <div>
             <div className="wisteria sessions">
-                <h2 className= "center red sessions">Game: {game.game_title} </h2>                
+                <h2 className= "sessions">Game: {game.game_title} </h2>                
                 <h2 className="sessions">Host: {game?.host?.username} </h2>
                 <h3 className="sessions">Number of players: {playerLength}/{game.requested_number_of_players}  </h3>
                 <p className="descriptions">Description: {game.description} </p>
