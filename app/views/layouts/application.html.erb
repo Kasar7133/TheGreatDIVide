@@ -6,22 +6,22 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
-<body class="onyx">
+<body class="ivory">
   
-  <nav class="top-bar ivory">
-    <h1><a href="/">The Great Divide</a></h1>
+  <nav class="top-bar blue">
+    <h1><a href="/" class="blue borders">The Great Divide</a></h1>
 
-    <section class="top-bar-section center">
-    <strong><%=link_to "Add a new game request.", new_game_post_path%></strong>
+    <section class="top-bar-section center borders-add ivory">
+    <strong><%=link_to "Add a new game request.", new_game_post_path, class:"ivory" %></strong>
     </section>
 
-    <section class="top-bar-section ivory">
-      <ul class="right ivory">
+    <section class="top-bar-section blue">
+      <ul class="right blue">
         <%- if current_user -%>
-          <li class="ivory"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete%></li>
+          <li class="blue"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:"blue" %></li>
         <%- else -%>
-          <li class="ivory"><%= link_to 'Sign Up', new_user_registration_path%></li>
-          <li class="ivory"><%= link_to 'Sign In', new_user_session_path%></li>
+          <li class="blue"><%= link_to 'Sign Up', new_user_registration_path, class:"blue" %></li>
+          <li class="blue"><%= link_to 'Sign In', new_user_session_path, class:"blue" %></li>
         <%- end -%>
       </ul>
     </section>
@@ -45,5 +45,8 @@
   <%= javascript_pack_tag 'application' %>
   
   <%= yield :extra_footer %>
+  <footer class="center" >
+  This is a footer
+  </footer>
 </body>
 </html>
