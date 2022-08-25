@@ -1,12 +1,12 @@
-<h1 class="center sessions">Available Sessions:</h1>
+<h1 class="center sessions">Available Teams:</h1>
 
 
-<div class="grid-container ivory">
+<div class="grid-container">
     <%@game_posts.each do |post|%>
             
-        <div class="callout cell wisteria cell-border"> 
+        <div class="callout cell cell-border blue"> 
         
-            <h2>Team Name: <%=link_to "#{post.team_name}", "/game_posts/#{post.id}"%></h2> 
+            <h2>Team Name: <%=link_to "#{post.team_name}", "/game_posts/#{post.id}", class: "team-link" %></h2> 
             <h5>Empty slots: <%=post.requested_number_of_players-post.registrations.length%></h5>
 
         </div>

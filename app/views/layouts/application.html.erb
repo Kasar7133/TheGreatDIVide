@@ -6,14 +6,14 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
-<body class="ivory">
+<body>
   
   <nav class="top-bar blue">
-    <h1><a href="/" class="blue borders">The Great Divide</a></h1>
+    <h1><a href="/" class="blue">The Great Divide</a></h1>
 
-    <section class="top-bar-section center borders-add ivory">
-    <strong><%=link_to "Add a new game request.", new_game_post_path, class:"ivory" %></strong>
-    </section>
+   
+    <strong><%=link_to "Add a new game request.", new_game_post_path, class: "top-bar-section center borders-add add-button button-style" %></strong>
+    
 
     <section class="top-bar-section blue">
       <ul class="right blue">
