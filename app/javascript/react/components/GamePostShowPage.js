@@ -92,7 +92,7 @@ const GamePostShowPage = (props) => {
 
     return (
         <div>
-            <div className="wisteria sessions">
+            <div className="wisteria sessions cell-border">
                 <h2 className= "sessions">Game: {game.game_title} </h2>                
                 <h2 className="sessions">Host: {game?.host?.username} </h2>
                 <h3 className="sessions">Number of players: {playerLength}/{game.requested_number_of_players}  </h3>
@@ -101,7 +101,7 @@ const GamePostShowPage = (props) => {
                 <ul>
                     {playerList}
                 </ul>
-                <button className="descriptions button success" onClick={postPlayer} >Join This Game</button>
+                <button className="descriptions button success join-border" onClick={postPlayer} >Join This Game</button>
             </div>
 
         </div>

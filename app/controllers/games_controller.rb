@@ -9,15 +9,14 @@ class GamesController < ApplicationController
     end
 
     def create
-        @new_game = Game.new(params.title)
+        @new_game = Game.new(title: params[:game][:title])
         if @new_game.save
             flash[:notice] = "Added game successfully."
-            redirect_to game_path(@new_game)
+            redirect_to new_game_post_path(@new_game)
         else
             flash.now[:error] = @new_game.errors.full_messages.to_sentence
             render :new
         end
-
     end
 
     def show
