@@ -86,14 +86,16 @@ const GamePostShowPage = (props) => {
     }else{
         playerLength = 0
     }
-      
-    
+
 
 
     return (
         <div>
             <div className="blue sessions cell-border">
-                <h2 className= "sessions">Game: {game.game_title} </h2>                
+                <div className="center image-topper">
+                <img className="" src={game.image_url} alt={game.game_title}/>
+                </div>
+                <h2 className= "center">Game: {game.game_title} </h2>                
                 <h2 className="sessions">Host: {game?.host?.username} </h2>
                 <h3 className="sessions">Number of players: {playerLength}/{game.requested_number_of_players}  </h3>
                 <p className="descriptions">Description: {game.description} </p>
@@ -101,7 +103,7 @@ const GamePostShowPage = (props) => {
                 <ul>
                     {playerList}
                 </ul>
-                <button className="descriptions button new-success join-border" onClick={postPlayer} >Join This Game</button>
+                <button className="join button new-success join-border" onClick={postPlayer} >Join This Game</button>
             </div>
 
         </div>

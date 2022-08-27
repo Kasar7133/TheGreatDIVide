@@ -6,14 +6,14 @@
 <%= f.collection_select :game_id, Game.all, :id, :title, include_blank: true %>
 </div>
 
-<%=f.label :team_name,  class: "form-labels wisteria"%>
+<%=f.label :team_name,  class: "form-labels wisteria", value: "team name:"%>
 <%=f.text_field :team_name, class: "form-labels text-field" %>
 
 <%=f.label :requested_number_of_players,value: "Number of players you need:", class: "form-labels wisteria"%>
 <%=f.text_field :requested_number_of_players, class: "form-labels text-field"%>
 
-<%=f.label :description, class: "form-labels wisteria"%>
+<%=f.label :description, class: "form-labels wisteria", value: "Description:"%>
 <%=f.text_field :description, class: "form-labels text-field"%>
 
-<%=f.submit "Add Game Request", class: "button new-success sessions"%>
+<%=f.submit "Add Game Request", class: "button new-success"%>
 <%end%>
