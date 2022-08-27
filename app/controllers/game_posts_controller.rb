@@ -4,11 +4,6 @@ class GamePostsController<ApplicationController
     def index
         @game_posts = GamePost.where(game_id: params[:game_id])
     end
-
-    def show
-        @this_post = GamePost.find(params[:id])
-        @host = @this_post.user
-      end
       
       def new 
         @new_post = GamePost.new

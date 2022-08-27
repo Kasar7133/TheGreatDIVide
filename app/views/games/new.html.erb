@@ -3,10 +3,10 @@
 
 <%= form_for(@new_game) do |f|%>
 
-<%=f.label :title, class: "form-labels sessions wisteria"%>
+<%=f.label :title, class: "form-labels sessions wisteria", value: "Game Title:"%>
 <%=f.text_field :title, class: "form-labels text-field"%>
 
-<%=f.submit "Add Game", class: "button sessions new-success"%>
+<%=f.submit "Add Game", class: "button new-success"%>
 <%end%>
 
 
