@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/dogica" type="text/css"/>
   <title>The Great Divide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -9,21 +10,21 @@
 <body>
   
   <nav class="top-bar blue">
-    <h1><a href="/" class="blue">The Great Divide</a></h1>
+    <h1><a href="/" class="blue logo">The Great Divide</a></h1>
 
    
-    <strong><%=link_to "Add a new game request.", new_game_post_path, class: "top-bar-section center borders-add add-button button-style" %></strong>
     
 
     <section class="top-bar-section blue">
-      <ul class="right blue">
-        <%- if current_user -%>
-          <li class="blue"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:"blue" %></li>
-        <%- else -%>
-          <li class="blue"><%= link_to 'Sign Up', new_user_registration_path, class:"blue" %></li>
-          <li class="blue"><%= link_to 'Sign In', new_user_session_path, class:"blue" %></li>
-        <%- end -%>
-      </ul>
+      <strong><%=link_to "New Team Request", new_game_post_path, class: "top-bar-section center borders-add add-button button-style" %></strong>
+      
+       <%- if current_user -%>
+        <strong><a class="blue"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:"blue" %></a></strong>
+      <%- else -%>
+        <strong><a class="blue"><%= link_to 'Sign Up', new_user_registration_path, class:"blue" %></a></strong>
+        <strong><a class="blue"><%= link_to 'Sign In', new_user_session_path, class:"blue" %></a></strong>
+      <%- end -%>
+      
     </section>
   </nav>
 
@@ -45,8 +46,6 @@
   <%= javascript_pack_tag 'application' %>
   
   <%= yield :extra_footer %>
-  <footer class="center" >
 
-  </footer>
 </body>
 </html>

@@ -1,10 +1,10 @@
 <h1 class="center" >Available Games:</h1>
 <div class="grid-container">
     <%@games.each do |game|%>
-        <div class="callout cell cell-border blue"> 
-            <h2 class="center" ><%=link_to "#{game.title}", game_game_posts_path(game.id), class: "blue"%></h2>
+        <div class="callout cell page-items"> 
+            <h2 class="center" ><%=link_to "#{game.title}", game_game_posts_path(game.id), class: "page-items"%></h2>
 
         </div>
     <%end%>
-    <%= link_to "Don't see your game? Add it here!", new_game_path, class: "button new-success"%>
+    <%= link_to "Add Game", new_game_path, class: "button new-success"%>
 </div>
