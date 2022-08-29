@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "games#index"
+  root "homepages#index"
   devise_for :users
   resources :games, only: [:index, :show, :new, :create] do
     resources :game_posts, only: [:index, :destroy] 

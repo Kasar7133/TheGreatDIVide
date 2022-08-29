@@ -18,8 +18,21 @@
     background-color: #F0FFF1;
 }
 
+.show-page{
+    margin-bottom: 1%;
+}
+
+.landing-image{
+    background-color: #4a1779;
+}
+
 .blue{
     background-color: #890098 ;
+    color: #F0FFF1;
+}
+
+.page-items{
+    background-color: #ae39bb ;
     color: #F0FFF1;
 }
 
@@ -33,12 +46,23 @@
     color: #F0FFF1;
 }
 
-.team-link{
-    color: #F0FFF1;
+.logo{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.team-list{
+    float: right;
+    text-align: right;
+   
+}
+
+.bottom-layer{
+    margin-bottom: 1%;
+    text-align: left;
 }
 
 .new-success{
-    background-color: #1A5D03;
+    background-color: #267e07;
     color: #F0FFF1;
     padding-left: 10px;
     margin-top: 10px;
@@ -82,6 +106,10 @@
     border: #443850;
     border-style: solid;
     border-width: thin;
+}
+
+.signing{
+    margin-left: 1%;
 }
 
 .join{

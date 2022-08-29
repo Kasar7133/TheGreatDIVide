@@ -91,18 +91,27 @@ const GamePostShowPage = (props) => {
 
     return (
         <div>
-            <div className="blue sessions cell-border">
+            <div className="page-items show-page sessions cell-border">
                 <div className="center image-topper">
-                <img className="" src={game.image_url} alt={game.game_title}/>
+                <img src={game.image_url} alt={game.game_title}/>
                 </div>
                 <h2 className= "center">Game: {game.game_title} </h2>                
+                <div className="row">
+
+                <div className="columns large-6">
+
                 <h2 className="sessions">Host: {game?.host?.username} </h2>
                 <h3 className="sessions">Number of players: {playerLength}/{game.requested_number_of_players}  </h3>
-                <p className="descriptions">Description: {game.description} </p>
+                <p className="descriptions bottom-layer">Description: {game.description} </p>
+                </div>
+                <div className="columns large-6">
+
                 <p className="descriptions">Team: </p>
                 <ul>
                     {playerList}
                 </ul>
+                </div>
+                </div>
                 <button className="join button new-success join-border" onClick={postPlayer} >Join This Game</button>
             </div>
 
