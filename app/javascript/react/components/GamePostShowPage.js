@@ -103,6 +103,7 @@ const GamePostShowPage = (props) => {
                 <h2 className="sessions">Host: {game?.host?.username} </h2>
                 <h3 className="sessions">Number of players: {playerLength}/{game.requested_number_of_players}  </h3>
                 <p className="descriptions bottom-layer">Team Notes: {game.description} </p>
+                <button className="join button new-success join-border" onClick={postPlayer} >Join This Game</button>
                 </div>
                 <div className="columns large-6">
 
@@ -112,7 +113,6 @@ const GamePostShowPage = (props) => {
                 </ul>
                 </div>
                 </div>
-                <button className="join button new-success join-border" onClick={postPlayer} >Join This Game</button>
             </div>
 
         </div>
