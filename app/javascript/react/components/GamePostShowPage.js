@@ -102,7 +102,7 @@ const GamePostShowPage = (props) => {
 
                 <h2 className="sessions">Host: {game?.host?.username} </h2>
                 <h3 className="sessions">Number of players: {playerLength}/{game.requested_number_of_players}  </h3>
-                <p className="descriptions bottom-layer">Description: {game.description} </p>
+                <p className="descriptions bottom-layer">Team Notes: {game.description} </p>
                 </div>
                 <div className="columns large-6">
 
