@@ -1,7 +1,6 @@
 require 'net/https'
 class Api::V1::GamePostsController < ApplicationController
     before_action :authenticate_user!
-    before_action :authorize_user, except: [:show]
     
     def show
         gamePost = GamePost.find(params[:id])
