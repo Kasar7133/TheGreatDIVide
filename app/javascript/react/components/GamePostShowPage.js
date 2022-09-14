@@ -49,8 +49,7 @@ const GamePostShowPage = (props) => {
             const error = new Error(errorMessage)
             throw(error)
           }
-            //   replace this logic with:
-            //   get the current user and add that player t
+
             let existingPlayer = false
 
             game.players.forEach((player)=>{
