@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom"
 
 const NewGamePage = (props) => {
     const [gameName, setGameName] = useState("")
-    // const [redirect, setRedirect] = useState(false)
+    const [redirect, setRedirect] = useState(false)
     
 
 
@@ -35,16 +35,15 @@ const NewGamePage = (props) => {
             const error = new Error(errorMessage)
             throw(error)
         }
-        // setRedirect(true)        
+        setRedirect(true)        
         } catch(error) {
             console.log(`Error in fetch: ${error}`)
         }
 
     }
-    // if (redirect){
-    //     debugger
-    //     return <Redirect to="/game_posts/new/reload"/>
-    // }
+    if (redirect){
+        return <Redirect to="/game_posts/new"/>
+    }
 
     return (
         <form>
