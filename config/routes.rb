@@ -10,10 +10,9 @@ Rails.application.routes.draw do
   
   namespace :api do
     namespace :v1 do
-      resources :games, only: [:new, :create] do
-        resources :game_posts, only: [:show] do
-          resources :registrations, only: [:create]
-        end
+      resources :games, only: [:create] 
+      resources :game_posts, only: [:show] do
+        resources :registrations, only: [:create]
       end
     end
   end

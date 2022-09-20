@@ -3,7 +3,7 @@
 
 <div class="grid-container">
     <%@game_posts.each do |post|%>
-            
+
         <div class="callout cell page-items"> 
         
             <h2>Team Name: <%=link_to "#{post.team_name}", "/game_posts/#{post.id}", class: "page-items" %></h2> 
