@@ -15,18 +15,17 @@ const GamePostShowPage = (props) => {
 
     const fetchGame = async () => {
         try {
-          const response = await fetch(`/api/v1/game_posts/${props.match.params.id}`)
-          if (!response.ok) {
+            const response = await fetch(`/api/v1/game_posts/${props.match.params.id}`)
+            if (!response.ok) {
             const errorMessage = `${response.status} (${response.statusText})`
             const error = new Error (errorMessage)
             throw(error)
-          }
-          const gameData = await response.json()
-
-          setGame(gameData.session)
-          setCurrentUser(gameData.current_user)
-        } catch (error) {
-          console.error(`Error in fetch: ${error.message}`)
+        }
+        const gameData = await response.json()
+        setGame(gameData.session)
+        setCurrentUser(gameData.current_user)
+    } catch (error) {
+        console.error(`Error in fetch: ${error.message}`)
         }
     }
 
@@ -38,18 +37,18 @@ const GamePostShowPage = (props) => {
             credentials: "same-origin",
             method: "POST",
             headers: {
-              "Accept": "application/json",
-              "Content-Type": "application/json"
+                "Accept": "application/json",
+                "Content-Type": "application/json"
             },
             body: JSON.stringify({players: game.user})
-          })
-
-            if (!response.ok) {
+        })
+        
+        if (!response.ok) {
             const errorMessage = `${response.status} (${response.status.text})`
             const error = new Error(errorMessage)
             throw(error)
           }
-
+          
             let existingPlayer = false
 
             game.players.forEach((player)=>{
@@ -62,7 +61,7 @@ const GamePostShowPage = (props) => {
                 setGame({...game, players: game.players.concat(currentUser)})
             }
 
-
+            
         } catch(error) {
             console.log(`Error in fetch: ${error}`)
         }
@@ -79,17 +78,17 @@ const GamePostShowPage = (props) => {
         playerList = game.players.map((player)=>{
             return (
                 <li key={player.username} className="players">{player.username}</li>
-            )
-        })
+                )
+            })
+            
+        }else{
+            playerLength = 0
+        }
         
-    }else{
-        playerLength = 0
-    }
-
-
-
-    return (
-        <div>
+        
+        
+        return (
+            <div>
             <div className="page-items show-page sessions cell-border">
                 <div className="center image-topper">
                 <img src={game.image_url} alt={game.game_title}/>
