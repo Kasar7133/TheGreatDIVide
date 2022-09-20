@@ -17,7 +17,7 @@ const NewGamePage = (props) => {
     // }, [])
 
 
-    const postGame = async (event) =>{
+    const postGame = async event =>{
         event.preventDefault()
         try {
             const response = await fetch(`/api/v1/games`, {
