@@ -10,7 +10,7 @@ class Api::V1::SearchesController < ApplicationController
         request.body = "fields name; search \"#{@searchData}\";"
         response = http.request(request).body
         gameData = JSON.parse response
-        render json: {searchData: gameData}
+        render json: gameData
     end
 
 
