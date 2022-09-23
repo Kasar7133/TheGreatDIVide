@@ -56,6 +56,7 @@ const GamePostShowPage = (props) => {
                     existingPlayer = true
                 }
             })
+            
             if (currentUser.username === game.host.username){
                 existingPlayer = true
             }
