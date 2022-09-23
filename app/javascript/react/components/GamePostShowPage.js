@@ -54,10 +54,13 @@ const GamePostShowPage = (props) => {
             game.players.forEach((player)=>{
                 if (player.username === currentUser.username){
                     existingPlayer = true
-                } else if (currentUser.username === game.host.username){
-                    existingPlayer = true
                 }
+                
             })
+            
+            if (currentUser.username === game.host.username){
+                existingPlayer = true
+            }
 
             if(existingPlayer === false){
                 setGame({...game, players: game.players.concat(currentUser)})
