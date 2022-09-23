@@ -72,12 +72,13 @@ const NewGamePage = (props) => {
     return (
         <form>
             <div>
-                <label htmlFor="game_name" className="form-labels sessions wisteria" >Game Title:</label>
+                <label htmlFor="game_name" className="form-labels sessions wisteria" >Select a Game:</label>
                 <AsyncSelect
                 cacheOptions
                 className="form-labels text-field"
                 id= "game_name"
                 type="text"
+                placeholder={gameName}
                 value={gameName}
                 getOptionLabel={(result) => result.name}
                 getOptionValue={(result) => result.name}
