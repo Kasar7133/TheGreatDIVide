@@ -5,30 +5,31 @@ import { Redirect } from "react-router-dom"
 const NewGamePage = (props) => {
     const [gameName, setGameName] = useState("")
     const [redirect, setRedirect] = useState(false)
-    
+    const [fill, setFill] = useState()
     // gameName has search data
-
     const changeHandler = event =>{
         setGameName(event.currentTarget.value)
         postSearch(event.currentTarget.value)
     }
-    // useEffect can render the autocomplete solutions
-    // useEffect(() => {
-    // }, [])
 
     // fetch can use API given function in backend
+
+
 
     const postSearch = async search =>{
         try {
             const response = await fetch(`/api/v1/searches`,{
                 credentials: "same-origin",
-            method: "POST",
-            headers: {
-              "Accept": "application/json",
-              "Content-Type": "application/json"
+                method: "POST",
+                headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
             },
             body: JSON.stringify({searchData: search})
           })
+          const gameData = await response.json()
+          setFill(gameData)
+          
 
             if (!response.ok) {
             const errorMessage = `${response.status} (${response.status.text})`
@@ -40,6 +41,7 @@ const NewGamePage = (props) => {
         }
 
     }
+
 
     const postGame = async event =>{
         event.preventDefault()
