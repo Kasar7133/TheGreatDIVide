@@ -7,7 +7,7 @@ class Api::V1::SearchesController < ApplicationController
         http = Net::HTTP.new('api.igdb.com',443)
         http.use_ssl = true
         request = Net::HTTP::Post.new(URI('https://api.igdb.com/v4/search'), {'Client-ID' => "#{ENV["THE_ID"]}", 'Authorization' => "Bearer #{ENV["THE_KEY"]}"})
-        request.body = "fields name; search \"#{@searchData}\";"
+        request.body = "fields name; limit 30; search \"#{@searchData}\";"
         response = http.request(request).body
         gameData = JSON.parse response
         render json: gameData
