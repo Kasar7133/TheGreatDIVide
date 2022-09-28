@@ -83,6 +83,7 @@ const NewGamePage = (props) => {
                 onChange={changeHandler}
                 />
                 
+                
                 <input onClick={postGame} type="submit" value="Add Game" className="button new-success" />
             </div>
         </form>
