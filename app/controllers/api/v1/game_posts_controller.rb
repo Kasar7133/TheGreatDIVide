@@ -1,6 +1,18 @@
 require 'net/https'
 class Api::V1::GamePostsController < ApplicationController
     before_action :authenticate_user!
+
+    def new
+       @new_post = GamePost.new
+       
+    end
+
+    def create
+        @new_post= GamePost.new(post_params)
+        @new_post.user = current_user
+        @this_game = Game.find(post_params[:game_id])
+        @new_post.game_title = @this_game.title
+    end
     
     def show
         gamePost = GamePost.find(params[:id])
@@ -49,5 +61,9 @@ class Api::V1::GamePostsController < ApplicationController
             @description= description
             @image_url= image_url
         end
+    end
+    private
+    def post_params
+        params.require(:game_post).permit(:game_title, :requested_number_of_players, :user_id, :description, :team_name, :game_id)
     end
 end   
