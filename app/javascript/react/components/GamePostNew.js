@@ -76,7 +76,7 @@ const GamePostNew = (props) => {
             <label htmlFor="description" className="form-labels sessions wisteria">Team Notes:</label>
             <input id="description" type="text" onChange={notesHandler} className="form-labels text-field"></input>
 
-            <input type="submit" value="Request Team" className="button new-success" />
+            <input type="submit" value="Request Team" className="button new-success"/>
         </div>
     )
 }
