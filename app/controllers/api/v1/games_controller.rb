@@ -2,6 +2,11 @@ require 'net/https'
 class Api::V1::GamesController < ApplicationController
     protect_from_forgery unless: -> { request.format.json? }
 
+    def index
+        @all_games = Game.all
+        render json: @all_games
+    end
+
     def create
         @new_game = Game.new(title: params["name"])
 
