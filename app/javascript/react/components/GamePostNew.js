@@ -1,26 +1,38 @@
 import React, { useState } from "react"
 import AsyncSelect from 'react-select/async'
+import Select from 'react-select'
 
 
 const GamePostNew = (props) => {
     const [fetched, setFetched] = useState(false)
     const [gameName, setGameName] = useState("")
-    const [teamName, setTeamName] = useState("")
-    const [teamNotes, setTeamNotes] = useState("")
-
-    const playerLimit = []
+    const [postInfo, setPostInfo] = useState({
+        game_title:"",
+        requested_number_of_players: null,
+        description:"",
+        team_name:""
+    })
+    
+    const limitList = [{value:1,label:"1"},
+    {value:2,label:"2"},
+    {value:3,label:"3"},
+    {value:4,label:"4"},
+    {value:5,label:"5"},
+    {value:6,label:"6"},
+    {value:7,label:"7"}]
+    
     const changeHandler = event =>{
         setGameName(event)
     }
 
     const teamHandler = event =>{
-        setTeamName(event.currentTarget.value)
+        setPostInfo({...postInfo, team_name: event.currentTarget.value})
     }
 
     const notesHandler = event =>{
-        setTeamNotes(event.currentTarget.value)
+        setPostInfo({...postInfo, description: event.currentTarget.value})
     }
-
+    console.log(postInfo)
     const fetchGame = async (event) => {
         try {
             const response = await fetch(`../api/v1/games`)
@@ -43,6 +55,14 @@ const GamePostNew = (props) => {
     fetchGame()
     setFetched(true)
     } 
+    
+    const gameChanger = (event) =>{
+        setPostInfo({...postInfo, game_title: event.title})
+    }
+
+    const playerChanger = (event) =>{
+        setPostInfo({...postInfo, requested_number_of_players: event.value})
+    }
 
     return(
         <div>
@@ -56,22 +76,19 @@ const GamePostNew = (props) => {
                 getOptionLabel={(result) => result.title}
                 getOptionValue={(result) => result.title}
                 loadOptions={fetchGame}
+                onChange={gameChanger}
                 onInputChange={changeHandler}
             />
             <label htmlFor="team_name" className="form-labels sessions wisteria">Team Name:</label>
             <input id="team_name" type="text" onChange={teamHandler} className="form-labels text-field"></input>
 
             <label htmlFor="requested_player_number" className="form-labels sessions wisteria">Number of players you need:</label>
-            <select name="requested_player_number" id="requested_player_number"  className="form-labels text-field">
-                <option value="">-</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-            </select>
+            <Select
+            className="form-labels text-field"
+            placeholder="Select # of players"
+            options={limitList}
+            onChange={playerChanger}
+            />
 
             <label htmlFor="description" className="form-labels sessions wisteria">Team Notes:</label>
             <input id="description" type="text" onChange={notesHandler} className="form-labels text-field"></input>
