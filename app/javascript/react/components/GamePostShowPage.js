@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 
-// too many players  
-// registrants not appearing on page after refresh 
+
 
 const GamePostShowPage = (props) => {
     const [game, setGame] = useState({

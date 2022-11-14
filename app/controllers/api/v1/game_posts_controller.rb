@@ -4,7 +4,7 @@ class Api::V1::GamePostsController < ApplicationController
 
     def new
        @new_post = GamePost.new
-       
+       @all_games = Game.all
     end
 
     def create
