@@ -1,7 +1,7 @@
 # TheGreatDIVide
 A team matchmaking app for video games.
 
-Using a Rails back-end, some React front-end, and a Twitch-based API.
+Using a Rails back-end, React front-end, and a Twitch-based Game Database API.
 
 Makes it so users can recruit teammates for cooperative gaming.
 
